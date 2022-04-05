@@ -5,17 +5,17 @@ import java.util.Objects;
 public class User
 {
     private int userId;
-    private String role;
+    private int roleId;
     private String username;
     private String password;
     private String email;
     private int balance;
 
 
-    public User(int userId, String role, String username, String password, String email, int balance)
+    public User(int userId, int roleId, String username, String password, String email, int balance)
     {
         this.userId = userId;
-        this.role = role;
+        this.roleId = roleId;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -26,7 +26,7 @@ public class User
     {
         this.username = username;
         this.password = password;
-        this.role = role;
+        this.roleId = roleId;
     }
 
 
@@ -35,7 +35,7 @@ public class User
     {
         return "User{" +
                 "userId=" + userId +
-                ", role='" + role + '\'' +
+                ", role='" + roleId + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
@@ -63,14 +63,14 @@ public class User
         this.password = password;
     }
 
-    public String getRole()
+    public int getRole()
     {
-        return role;
+        return roleId;
     }
 
-    public void setRole(String role)
+    public void setRoleId(String role)
     {
-        this.role = role;
+        this.roleId = roleId;
     }
 
     public int getUserId()
@@ -103,14 +103,14 @@ public class User
         this.balance = balance;
     }
 
+
     @Override
     public boolean equals(Object o)
     {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return getUsername().equals(user.getUsername()) && getPassword().equals(user.getPassword()) &&
-                getRole().equals(user.getRole());
+        return userId == user.userId && roleId == user.roleId && balance == user.balance && username.equals(user.username) && password.equals(user.password) && email.equals(user.email);
     }
 
     @Override
