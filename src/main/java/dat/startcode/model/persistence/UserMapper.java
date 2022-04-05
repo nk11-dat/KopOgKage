@@ -34,7 +34,7 @@ public class UserMapper implements IUserMapper
                 ResultSet rs = ps.executeQuery();
                 if (rs.next())
                 {
-                    int role = rs.getInt("role");
+                    int role = rs.getInt("role_id");
                     user = new User(username, password, role);
                 } else
                 {

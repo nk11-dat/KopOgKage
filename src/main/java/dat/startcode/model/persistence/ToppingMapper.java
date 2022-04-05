@@ -37,7 +37,7 @@ public class ToppingMapper implements IToppingMapper{
                 {
                     int toppingId = rs.getInt("topping_id");
                     String flavor = rs.getString("flavor");
-                    int price = rs.getInt("");
+                    int price = rs.getInt("price");
                     topping = new Topping(toppingId, flavor, price);
                 } else
                 {
