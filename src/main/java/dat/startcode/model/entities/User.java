@@ -22,7 +22,7 @@ public class User
         this.balance = balance;
     }
 
-    public User(String username, String password, String role)
+    public User(String username, String password, int roleId)
     {
         this.username = username;
         this.password = password;

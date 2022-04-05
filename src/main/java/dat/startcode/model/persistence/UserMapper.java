@@ -34,7 +34,7 @@ public class UserMapper implements IUserMapper
                 ResultSet rs = ps.executeQuery();
                 if (rs.next())
                 {
-                    String role = rs.getString("role");
+                    int role = rs.getInt("role");
                     user = new User(username, password, role);
                 } else
                 {
@@ -49,7 +49,7 @@ public class UserMapper implements IUserMapper
     }
 
     @Override
-    public User createUser(String username, String password, String role) throws DatabaseException
+    public User createUser(String username, String password, int role) throws DatabaseException
     {
         Logger.getLogger("web").log(Level.INFO, "");
         User user;
@@ -60,7 +60,7 @@ public class UserMapper implements IUserMapper
             {
                 ps.setString(1, username);
                 ps.setString(2, password);
-                ps.setString(3, role);
+                ps.setInt(3, role);
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected == 1)
                 {
