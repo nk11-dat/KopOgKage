@@ -10,7 +10,7 @@
     </jsp:attribute>
 
     <jsp:attribute name="footer">
-        Welcome to the frontpage
+        Welcome to the frontpage, det her er en footer.
     </jsp:attribute>
 
     <jsp:body>
