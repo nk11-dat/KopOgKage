@@ -5,7 +5,8 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-         Welcome to the frontpage
+         Welcome to the frontpage of the BEST cupcake group.
+        Namely group 1.
     </jsp:attribute>
 
     <jsp:attribute name="footer">
