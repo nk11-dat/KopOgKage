@@ -5,8 +5,7 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-         Welcome to the frontpage of the BEST cupcake group.
-        Namely group 1.
+         Login
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -15,15 +14,39 @@
 
     <jsp:body>
 
-        <p>Startcode for 2nd semester </p>
+        <c:if test="${sessionScope.user == null}">
+
+        <form action="login" method="post">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <input type="text" id="username" class="form-control" name="username"/>
+                <label class="form-label" for="username">Email address</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input type="password" id="password" class="form-control"name="password" />
+                <label class="form-label" for="password">Password</label>
+            </div>
+
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Not a member? <a href="#!">Register</a></p>
+
+            </div>
+        </form>
+
+
+            <p>You are not logged in yet. You can do it here: <a
+                    href="login.jsp">Login</a></p>
+        </c:if>
 
         <c:if test="${sessionScope.user != null}">
             <p>You are logged in with the role of "${sessionScope.user.role}".</p>
-        </c:if>
-
-        <c:if test="${sessionScope.user == null}">
-            <p>You are not logged in yet. You can do it here: <a
-                    href="login.jsp">Login</a></p>
         </c:if>
 
     </jsp:body>
