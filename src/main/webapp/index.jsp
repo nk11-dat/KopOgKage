@@ -40,7 +40,6 @@
             </div>
         </form>
 
-
             <p>You are not logged in yet. You can do it here: <a
                     href="login.jsp">Login</a></p>
         </c:if>
