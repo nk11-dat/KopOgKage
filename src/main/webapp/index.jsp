@@ -31,17 +31,17 @@
 
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Log ind</button>
 
             <!-- Register buttons -->
             <div class="text-center">
-                <p>Not a member? <a href="WEB-INF/createUser.jsp">Register</a></p>
+                <p>Endnu ikke en bruger? <a href="createUser.jsp">Opret her</a></p>
 
             </div>
         </form>
 
-            <p>You are not logged in yet. You can do it here: <a
-                    href="login.jsp">Login</a></p>
+            <p>Du er endnu ikke logget ind, gør det her: <a
+                    href="login.jsp">login</a></p>
         </c:if>
 
         <c:if test="${sessionScope.user != null}">
