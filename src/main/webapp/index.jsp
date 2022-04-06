@@ -48,11 +48,11 @@
             <p>Velkommen ${sessionScope.user.username}</p>
         </c:if>
 
-        <c:if test="${sessionScope.user.role == 1}">
+        <c:if test="${sessionScope.user.roleId == 1}">
             <p>Du er logget på som kunde.</p>
         </c:if>
 
-        <c:if test="${sessionScope.user.role == 2}">
+        <c:if test="${sessionScope.user.roleId == 2}">
             <p>Du er logget på som admin.</p>
         </c:if>
 

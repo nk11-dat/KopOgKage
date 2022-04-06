@@ -44,7 +44,7 @@
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/logout">Log out</a>
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">${sessionScope.user.email}</a>
                     </c:if>
-                    <c:if test="${sessionScope.user.role == 2}">
+                    <c:if test="${sessionScope.user.roleId == 2}">
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Admin manden</a>
                     </c:if>
 

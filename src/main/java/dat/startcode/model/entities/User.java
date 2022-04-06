@@ -63,7 +63,7 @@ public class User
         this.password = password;
     }
 
-    public int getRole()
+    public int getRoleId()
     {
         return roleId;
     }
@@ -116,6 +116,6 @@ public class User
     @Override
     public int hashCode()
     {
-        return Objects.hash(getUsername(), getPassword(), getRole());
+        return Objects.hash(getUsername(), getPassword(), getRoleId());
     }
 }
