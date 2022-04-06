@@ -15,6 +15,8 @@
 5. Ib Ibsen
    1. .......
 
+Frugtkage...
+
 ## Startkode på 2. semester forår 2022
 
 Dette repository er lavet i forbindelse med 2. semester på
