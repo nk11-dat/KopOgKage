@@ -52,21 +52,20 @@ public class UserMapper implements IUserMapper
     //TODO wooooooooooo
 
     @Override
-    public User createUser(int roleID, String username, String password, String email, int balance) throws DatabaseException
+    public User createUser(String username, String password, String email, int balance) throws DatabaseException
     {
         Logger.getLogger("web").log(Level.INFO, "");
         User user;
         int newId = 0;
-        String sql = "insert into user (role_id, username, password, email, balance) values (?, ?, ?, ?, ?)";
+        String sql = "insert into user (username, password, email, balance) values (?, ?, ?, ?)";
         try (Connection connection = connectionPool.getConnection())
         {
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
-                ps.setInt(1, roleID);
-                ps.setString(2, username);
-                ps.setString(3, password);
-                ps.setString(4, email);
-                ps.setInt(5, balance);
+                ps.setString(1, username);
+                ps.setString(2, password);
+                ps.setString(3, email);
+                ps.setInt(4, balance);
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected == 1) {
 
@@ -74,7 +73,7 @@ public class UserMapper implements IUserMapper
                 ResultSet idResultset = ps.getGeneratedKeys();
                 if (idResultset.next()) {
                     newId = idResultset.getInt(1);
-                    user = new User(newId, roleID, username, password, email, balance);
+                    user = new User(1,newId, username, password, email, balance);
                 } else
                 {
                     throw new DatabaseException("The user with username = " + username + " could not be inserted into the database");
