@@ -18,18 +18,18 @@ import java.util.logging.Logger;
 
 @WebServlet(name = "OrderOverview", urlPatterns = "/OrderOverview")
 public class OrderOverview extends HttpServlet {
-    private ConnectionPool connectionPool;
+    private OrderMapper orderMapper;
 
     @Override
     public void init() throws ServletException
     {
-        this.connectionPool = ApplicationStart.getConnectionPool();
+        ConnectionPool connectionPool = ApplicationStart.getConnectionPool();
+        orderMapper = new OrderMapper(connectionPool);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        OrderMapper orderMapper = new OrderMapper(connectionPool);
         List<OrderOverviewHeaderAdminDTO> orderDTOList = null;
 
         try
@@ -44,14 +44,13 @@ public class OrderOverview extends HttpServlet {
         }
         request.setAttribute("orderDTOList", orderDTOList);
 //        request.setAttribute("orderItemDTOList",);
-        request.getRequestDispatcher("adminIndex.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/adminIndex.jsp").forward(request, response);
     }
 
     @Override //Bruges til at opdatere order status fra adminIndex.jsp når der klikkes på [Button]
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        OrderMapper orderMapper = new OrderMapper(connectionPool);
 
         //TODO: Brug en Orde- entity istedet for bare at benytte orderId?
             //TODO: Hvad mener jon/nikolaj om det?
