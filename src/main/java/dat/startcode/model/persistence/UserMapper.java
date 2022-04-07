@@ -73,7 +73,7 @@ public class UserMapper implements IUserMapper
                 ResultSet idResultset = ps.getGeneratedKeys();
                 if (idResultset.next()) {
                     newId = idResultset.getInt(1);
-                    user = new User(newId, 1, username, password, email, balance);
+                    user = new User(newId,1, username, password, email, balance);
                 } else
                 {
                     throw new DatabaseException("The user with username = " + username + " could not be inserted into the database");
