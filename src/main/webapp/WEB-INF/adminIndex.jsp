@@ -19,7 +19,7 @@
         <form method="post">
             <table class="table">
                 <c:forEach var="orderDTO" items="${requestScope.orderDTOList}">
-                    <thead class="thead-light">
+                    <thead class="table-danger">
                     <tr>
                         <th scope="col">${orderDTO.orderId}</th>
                         <th scope="col">${orderDTO.costumerUsername}</th>
