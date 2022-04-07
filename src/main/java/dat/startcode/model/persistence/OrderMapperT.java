@@ -53,7 +53,7 @@ public class OrderMapperT implements IOrderMapperT
             }
         } catch (SQLException | DatabaseException ex)
         {
-            throw new DatabaseException(ex, "Error logging in. Something went wrong with the database");
+            throw new DatabaseException(ex, "Fejl i databasen.");
         }
         return orderItemDTOList;
     }
