@@ -31,9 +31,11 @@ public class CreateUser extends HttpServlet
 
     }
 
-    @Override
+    @Override           //opretter bruger her
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+
+
         response.setContentType("text/html");
         HttpSession session = request.getSession();
         session.setAttribute("user", null); // adding empty user object to session scope

@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
 
-                                <!-- check password input -->
+                                <!-- Check password input -->
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-md-6 mb-4">
                                         <input type="password" id="password2" name="password2" class="form-control" />
@@ -61,7 +61,7 @@
                                 </div>
 
 
-                                <!-- balance input -->
+                                <!-- Balance input -->
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-md-6 mb-4">
                                         <input type="number" id="balance" name="saldo" class="form-control" />
